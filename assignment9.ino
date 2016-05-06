@@ -46,18 +46,41 @@ void loop() {
   //TO-DO για το σχολείο: Κινήστε το αυτοκινητάκι στην πίστα και ΑΣΥΡΜΑΤΑ δείτε τις αποστάσεις στον υπολογιστή, μέσω bluetooth (δεν χρειάζεται επιπλέον κώδικας)
   //TO-DO για το σπίτι: Κάντε το αυτοκινητάκι να προσπαθεί να μείνει στη μέση των δύο τοίχων. Το πόσο θα στρίψετε αριστερά, με το folkracer.setAngle θα το βρείτε πειραματικά. Αρχίστε τις δοκιμές με το setAngle(50).
    
-  if (rightDistance > leftDistance){ //Εάν απέχει από τον δεξιά τοιχο περισσότερο από ότι τον αριστερό,
-    folkracer.setAngle(50);//στρίψτε δεξιά
-    folkracer.setSpeed(0.2);
-  } else {
-    folkracer.setAngle(-50); // αλλιώς αριστερά
-    }
-
-  if (frontDistance > 1 && frontDistance < 20){//Εάν βρίσκει εμπόδιο μπροστά σε κοντινή απόσταση,
-    folkracer.setAngle(75);//ας στρίβει προς τα δεξιά κατά 75 μοίρες, με το setAngle.
-    folkracer.setSpeed(0.2);
+  if (rightDistance == 0 && leftDistance ==0) {
+    folkracer.setSpeed(0.5);
   }
-  
+  if (rightDistance ==0 && 0<leftDistance<30) {
+    folkracer.setAngle(30);
+  }
+  if (rightDistance == 0 && leftDistance>30) {
+    folkracer.setSpeed(0.5);
+  }
+  if (0<rightDistance<30 && leftDistance == 0) {
+    folkracer.setAngle(-30);
+  }
+  if (0<rightDistance<30 && 0<leftDistance<30) {
+    folkracer.setSpeed(0.5);
+  }
+  if (0<rightDistance<30 && leftDistance >30) {
+    folkracer.setAngle(-30);      
+  }
+  if (rightDistance >30 && leftDistance == 0) {
+    folkracer.setSpeed(0.5);
+  }
+  if (rightDistance >30 && leftDistance>0 && leftDistance <30) {
+    folkracer.setAngle(30);
+  }
+  if (rightDistance >30 && leftDistance >30) {
+    folkracer.setSpeed(0.5);
+  }
+  if (rightDistance<leftDistance) {
+    folkracer.setAngle(-30);
+  }
+  if (rightDistance>leftDistance) {
+    folkracer.setAngle(30);
+  }          
+  }
   //Στο σχολείο, να διαβάζετε (στο serial monitor του Arduino IDE) τις αποστάσεις που ανιχνεύει το αυτοκινητάκι ασύρματα μέσω bluetooth, έτσι ώστε να καταλάβετε τι "διαβάζει"
   //το αυτοκινητάκι όταν κινείται στην πίστα!  
+  
 }
