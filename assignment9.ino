@@ -48,66 +48,46 @@ void loop() {
   //TO-DO για το σπίτι: Κάντε το αυτοκινητάκι να προσπαθεί να μείνει στη μέση των δύο τοίχων. Το πόσο θα στρίψετε αριστερά, με το folkracer.setAngle θα το βρείτε πειραματικά. Αρχίστε τις δοκιμές με το setAngle(50).
    
   if (rightDistance == 0 && leftDistance ==0) {
-    folkracer.setSpeed(0.5);
+    folkracer.setSpeed(0.5);//C3
   }
   if (rightDistance ==0){
     if (leftDistance >0 && leftDistance <30) {
-    folkracer.setAngle(30);
-
-  if (rightDistance == 0 && leftDistance ==0) {
-    folkracer.setSpeed(0.5);
-  }
-  if (rightDistance ==0 && 0<leftDistance<30) {
-    folkracer.setAngle(30);
+    folkracer.setAngle(30);//C4
   }
   if (rightDistance == 0 && leftDistance>30) {
-    folkracer.setSpeed(0.5);
+    folkracer.setSpeed(0.5);//C5
   }
-  if (0<rightDistance<30 && leftDistance == 0) {
-    folkracer.setAngle(-30);
+  if (rightDistance>0 && rightDistance<30){
+    if (leftDistance == 0) {
+      folkracer.setAngle(-30);//D3
   }
-  if (0<rightDistance<30 && 0<leftDistance<30) {
-    folkracer.setSpeed(0.5);
+    }
+  if (rightDistance>0 && rightDistance<30){
+    if (leftDistance >0 && leftDistance<30) {
+    folkracer.setSpeed(0.5);//D4
   }
-  if (0<rightDistance<30 && leftDistance >30) {
-    folkracer.setAngle(-30);      
+    }
+  if (rightDistance>0 && rightDistance<30){ 
+    if (leftDistance >30) {
+    folkracer.setAngle(-30);//D5      
   }
+    }
   if (rightDistance >30 && leftDistance == 0) {
-    folkracer.setSpeed(0.5);
+    folkracer.setSpeed(0.5);//E3
   }
-  if (rightDistance >30 && leftDistance>0 && leftDistance <30) {
-    folkracer.setAngle(30);
-  }
-  if (rightDistance >30 && leftDistance >30) {
-    folkracer.setSpeed(0.5);
-  }
-  if (rightDistance<leftDistance) {
-    folkracer.setAngle(-30);
-  }
-  if (rightDistance>leftDistance) {
-    folkracer.setAngle(30);
-  }          
-  if (leftDistance >30) {
-    folkracer.setAngle(-30);      
-  }
-  if (rightDistance >30 && leftDistance == 0) {
-    folkracer.setSpeed(0.5);
-  }
-  if (rightDistance >30) {
-    if (leftDistance>0 && leftDistance <30) {
-      folkracer.setAngle(30);
+  if (rightDistance >30){
+   if (leftDistance>0 && leftDistance <30) {
+    folkracer.setAngle(30);//E4
   }
     }
   if (rightDistance >30 && leftDistance >30) {
-    folkracer.setSpeed(0.5);
+    folkracer.setSpeed(0.5);//E5
   }
-  
   if (rightDistance<leftDistance) {
-    folkracer.setAngle(-30);
+    folkracer.setAngle(-30);//G6
   }
-  
   if (rightDistance>leftDistance) {
-    folkracer.setAngle(30);
+    folkracer.setAngle(30);//F7
   }          
 
   //Στο σχολείο, να διαβάζετε (στο serial monitor του Arduino IDE) τις αποστάσεις που ανιχνεύει το αυτοκινητάκι ασύρματα μέσω bluetooth, έτσι ώστε να καταλάβετε τι "διαβάζει"
