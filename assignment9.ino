@@ -51,8 +51,7 @@ void loop() {
     folkracer.setAngle(0);//C3
     bluetooth.println("Pigenai eftheia");
   }
-  if (rightDistance ==0){
-    if (leftDistance >0 && leftDistance <30) {
+  if (rightDistance ==0 && leftDistance >0 && leftDistance <30) {
     folkracer.setAngle(60);//C4
     bluetooth.println("Stripse de3ia");
   }
@@ -60,46 +59,38 @@ void loop() {
     folkracer.setAngle(0);//C5
     bluetooth.println("Pigenai eftheia");
   }
-  if (rightDistance>0 && rightDistance<30){
-    if (leftDistance == 0) {
-      folkracer.setAngle(-60);//D3
-      bluetooth.println("Stripse aristera");
+  if (rightDistance>0 && rightDistance<30 && leftDistance == 0) {
+    folkracer.setAngle(-60);//D3
+    bluetooth.println("Stripse aristera");
   }
-    }
-  if (rightDistance>0 && rightDistance<30){
-    if (leftDistance >0 && leftDistance<30) {
+  if (rightDistance>0 && rightDistance<30 && leftDistance >0 && leftDistance<30) {
     folkracer.setAngle(0);//D4
     bluetoothg.println("Pigenai eftheia");
   }
-    }
-  if (rightDistance>0 && rightDistance<30){ 
-    if (leftDistance >30) {
+  if (rightDistance>0 && rightDistance<30 && leftDistance >30) {
     folkracer.setAngle(-60);//D5
     bluetooth.println("Stripse aristera");
   }
-    }
-  if (rightDistance >30 && leftDistance == 0) {
+  if (rightDistance >30 && leftDistance == 0){
     folkracer.setAngle(0);//E3
     bluetooth.println("Pigenai eftheia");
   }
-  if (rightDistance >30){
-   if (leftDistance>0 && leftDistance <30) {
+  if (rightDistance >30 && leftDistance>0 && leftDistance <30) {
     folkracer.setAngle(60);//E4
     bluetooth.println("Stripse de3ia");
   }
-    }
   if (rightDistance >30 && leftDistance >30) {
     folkracer.setAngle(0);//E5
     bluetooth.println("Pigenai eftheia");
   }
-  //if (rightDistance<leftDistance) {
-  //  folkracer.setAngle(-60);//G6
-  //  bluetooth.println("Stripse aristera");
-  //}
-  //if (rightDistance>leftDistance) {
-  //  folkracer.setAngle(60);//F7
-  //  bluetooth.println("Stripse de3ia");
-  //}          
+  if (rightDistance<leftDistance) {
+    folkracer.setAngle(-60);//G6
+    bluetooth.println("Stripse aristera");
+  }
+  if (rightDistance>leftDistance) {
+    folkracer.setAngle(60);//F7
+    bluetooth.println("Stripse de3ia");
+  }          
 
   //Στο σχολείο, να διαβάζετε (στο serial monitor του Arduino IDE) τις αποστάσεις που ανιχνεύει το αυτοκινητάκι ασύρματα μέσω bluetooth, έτσι ώστε να καταλάβετε τι "διαβάζει"
   //το αυτοκινητάκι όταν κινείται στην πίστα!  
