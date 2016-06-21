@@ -48,48 +48,48 @@ void loop() {
   //TO-DO για το σπίτι: Κάντε το αυτοκινητάκι να προσπαθεί να μείνει στη μέση των δύο τοίχων. Το πόσο θα στρίψετε αριστερά, με το folkracer.setAngle θα το βρείτε πειραματικά. Αρχίστε τις δοκιμές με το setAngle(50).
    
   if (rightDistance == 0 && leftDistance ==0) {
-    folkracer.setAngle(0);//C3
     bluetooth.println("Pigenai eftheia c3");
+    folkracer.setAngle(0);//C3
   }
   if (rightDistance ==0 && leftDistance >0 && leftDistance <30) {
-    folkracer.setAngle(60);//C4
     bluetooth.println("Stripse de3ia c4");
+    folkracer.setAngle(60);//C4
   }
   if (rightDistance == 0 && leftDistance>30) {
-    folkracer.setAngle(0);//C5
     bluetooth.println("Pigenai eftheia c5");
+    folkracer.setAngle(0);//C5
   }
   if (rightDistance>0 && rightDistance<30 && leftDistance == 0) {
-    folkracer.setAngle(-60);//D3
     bluetooth.println("Stripse aristera d3");
+    folkracer.setAngle(-60);//D3
   }
   if (rightDistance>0 && rightDistance<30 && leftDistance >0 && leftDistance<30) {
+    bluetooth.println("Pigenai eftheia d4");
     folkracer.setAngle(0);//D4
-    bluetoothg.println("Pigenai eftheia d4");
   }
   if (rightDistance>0 && rightDistance<30 && leftDistance >30) {
-    folkracer.setAngle(-60);//D5
     bluetooth.println("Stripse aristera d5");
+    folkracer.setAngle(-60);//D5
   }
   if (rightDistance >30 && leftDistance == 0){
-    folkracer.setAngle(0);//E3
     bluetooth.println("Pigenai eftheia e3");
+    folkracer.setAngle(0);//E3
   }
   if (rightDistance >30 && leftDistance>0 && leftDistance <30) {
-    folkracer.setAngle(60);//E4
     bluetooth.println("Stripse de3ia e4");
+    folkracer.setAngle(60);//E4
   }
   if (rightDistance >30 && leftDistance >30) {
-    folkracer.setAngle(0);//E5
     bluetooth.println("Pigenai eftheia e5");
+    folkracer.setAngle(0);//E5
   }
   if (rightDistance<leftDistance) {
-    folkracer.setAngle(-60);//G6
     bluetooth.println("Stripse aristera g6");
+    folkracer.setAngle(-60);//G6
   }
   if (rightDistance>leftDistance) {
-    folkracer.setAngle(60);//F7
     bluetooth.println("Stripse de3ia f7");
+    folkracer.setAngle(60);//F7
   }          
 
   //Στο σχολείο, να διαβάζετε (στο serial monitor του Arduino IDE) τις αποστάσεις που ανιχνεύει το αυτοκινητάκι ασύρματα μέσω bluetooth, έτσι ώστε να καταλάβετε τι "διαβάζει"
